@@ -1,231 +1,398 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucro Digital | Guia de Finanças e Renda Extra</title>
-    <meta name="description" content="Descubra estratégias reais para ganhar dinheiro online, investir na bolsa e criar fontes de renda passiva.">
+    <title>Rota da Fortuna | Estratégias de Elite para Renda Digital</title>
+    <meta name="description" content="Artigos aprofundados sobre economia comportamental, investimentos e negócios digitais.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Fontes Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #10b981; /* Verde Dinheiro Moderno */
-            --primary-dark: #059669;
-            --dark: #111827;
-            --gray: #6b7280;
-            --light: #f3f4f6;
+            --primary: #0f172a; /* Azul Navy Profundo */
+            --gold: #d4af37; /* Dourado Premium */
+            --action: #2563eb; /* Azul Ação */
+            --bg: #f8fafc;
+            --text: #334155;
             --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f9fafb; 
-            color: var(--dark); 
-            line-height: 1.6; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* --- Cabeçalho --- */
-        header { background: var(--white); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; }
-        .nav-inner { 
-            max-width: 1200px; margin: 0 auto; padding: 1.2rem 1rem; 
-            display: flex; justify-content: space-between; align-items: center; 
-        }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-        .logo span { color: var(--primary); }
-        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--gray); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .cta-button {
-            background-color: var(--dark); color: white !important; padding: 8px 16px; border-radius: 6px;
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
 
-        /* --- Hero Section (Destaque) --- */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
-            margin-bottom: 2rem;
+        /* --- Barra de Progresso --- */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: transparent; z-index: 200; }
+        .progress-bar { height: 100%; background: var(--gold); width: 0%; transition: width 0.1s; }
+
+        /* --- Header --- */
+        header { background: var(--white); border-bottom: 1px solid #e2e8f0; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--primary); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--gold); }
+        .nav-btn { background: transparent; border: 1px solid var(--primary); padding: 8px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .nav-btn:hover { background: var(--primary); color: var(--gold); }
+
+        /* --- Modal Interstitial --- */
+        #interstitial-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 9999; display: none; justify-content: center; align-items: center;
+            flex-direction: column; backdrop-filter: blur(5px);
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-
-        /* --- Layout Principal --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: 7fr 3fr; gap: 3rem; }
-
-        /* --- Áreas de Anúncios (Marcadores Visuais) --- */
-        .ad-space {
-            background-color: #e5e7eb;
-            border: 1px dashed #9ca3af;
-            color: #6b7280;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
+        .modal-card {
+            background: white; width: 90%; max-width: 450px; padding: 30px;
+            border-radius: 12px; text-align: center; position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
         }
-        .ad-banner { width: 100%; height: 100px; }
-        .ad-sidebar { width: 100%; height: 300px; }
-
-        /* --- Postagens --- */
-        .post-card { background: var(--white); border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; margin-bottom: 2.5rem; transition: transform 0.2s; }
-        .post-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .loader-ring { display: inline-block; width: 64px; height: 64px; margin-bottom: 20px; }
+        .loader-ring:after {
+            content: " "; display: block; width: 46px; height: 46px; margin: 8px; border-radius: 50%;
+            border: 5px solid var(--primary); border-color: var(--primary) transparent var(--primary) transparent;
+            animation: ring 1.2s linear infinite;
+        }
+        @keyframes ring { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        .post-img { width: 100%; height: 240px; object-fit: cover; }
+        .ad-spot-modal { width: 300px; height: 250px; background: #f1f5f9; margin: 20px auto; display: flex; align-items: center; justify-content: center; color: #94a3b8; border: 1px dashed #cbd5e1; }
         
-        .post-body { padding: 1.5rem; }
-        .meta-tag { color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block; }
-        .post-title { font-size: 1.75rem; line-height: 1.3; margin-bottom: 1rem; color: var(--dark); }
-        .post-text { color: var(--gray); margin-bottom: 1.5rem; font-size: 1.05rem; }
-        .read-btn { display: inline-block; text-decoration: none; color: var(--primary); font-weight: 700; border-bottom: 2px solid transparent; }
-        .read-btn:hover { border-bottom-color: var(--primary); }
+        .skip-btn {
+            background: #cbd5e1; color: #64748b; border: none; padding: 12px 0; width: 100%;
+            font-weight: bold; font-size: 1rem; border-radius: 6px; cursor: not-allowed; transition: 0.3s;
+        }
+        .skip-btn.active { background: var(--action); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+
+        /* --- Layout Grid --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 320px; gap: 50px; }
+
+        /* --- Cards da Home --- */
+        .grid-posts { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .post-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .post-img { width: 100%; height: 280px; object-fit: cover; }
+        .post-body { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .category-tag { color: var(--action); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .post-title { font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; cursor: pointer; }
+        .post-excerpt { color: #64748b; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
+        .read-btn { align-self: flex-start; background: transparent; color: var(--primary); font-weight: bold; border-bottom: 2px solid var(--gold); padding-bottom: 2px; cursor: pointer; }
+
+        /* --- Artigo Aberto --- */
+        .article-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .article-header { text-align: center; margin-bottom: 40px; }
+        .article-header h1 { font-size: 2.8rem; margin: 15px 0; line-height: 1.1; }
+        .article-meta { color: #94a3b8; font-size: 0.9rem; font-style: italic; }
+        .article-content { font-size: 1.25rem; color: #334155; }
+        .article-content p { margin-bottom: 2rem; }
+        .article-content h2 { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1.5rem; position: relative; }
+        .article-content h2::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background: var(--gold); }
+        .dropcap::first-letter { font-size: 4rem; float: left; line-height: 0.8; margin-right: 15px; color: var(--primary); font-family: 'Playfair Display', serif; font-weight: 900; }
+        
+        /* --- Anúncios --- */
+        .ad-placeholder { width: 100%; height: 200px; background: #f8fafc; border: 2px dashed #e2e8f0; display: flex; align-items: center; justify-content: center; margin: 3rem 0; color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; position: relative; }
+        .ad-placeholder::before { content: 'Publicidade'; position: absolute; top: 10px; right: 10px; font-size: 0.6rem; color: #cbd5e1; }
 
         /* --- Sidebar --- */
-        .widget { background: var(--white); padding: 1.5rem; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 2rem; }
-        .widget h3 { font-size: 1.2rem; margin-bottom: 1rem; border-left: 4px solid var(--primary); padding-left: 10px; }
-        .cat-list li { list-style: none; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
-        .cat-list a { text-decoration: none; color: var(--gray); transition: 0.2s; }
-        .cat-list a:hover { color: var(--primary); padding-left: 5px; }
+        .sidebar { position: sticky; top: 100px; height: fit-content; }
+        .widget { background: white; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 30px; }
+        .widget h4 { font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9; }
+        .popular-list li { list-style: none; padding: 12px 0; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; font-size: 1rem; }
+        .popular-list li:hover { color: var(--action); padding-left: 5px; }
 
-        /* --- Footer --- */
-        footer { background: var(--dark); color: #9ca3af; padding: 3rem 0; margin-top: 4rem; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .footer h4 { color: white; margin-bottom: 1rem; }
-        .footer-links a { display: block; color: #9ca3af; text-decoration: none; margin-bottom: 0.5rem; }
-        .footer-links a:hover { color: white; }
-        
-        /* Mobile */
-        @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
-        }
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } .post-title { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
 
+    <!-- Barra de Progresso de Leitura -->
+    <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+
+    <!-- Modal Interstitial -->
+    <div id="interstitial-modal">
+        <div class="modal-card">
+            <h3 style="margin-bottom: 10px;">A preparar o conteúdo exclusivo...</h3>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 20px;">Apoie o nosso jornalismo independente.</p>
+            
+            <!-- ANÚNCIO DE ALTO VALOR (300x250) -->
+            <div class="ad-spot-modal">
+                Google AdSense (300x250)
+            </div>
+
+            <div class="loader-ring" id="loader"></div>
+            
+            <button id="btn-skip" class="skip-btn" onclick="app.skipAd()">Aguarde 5s...</button>
+        </div>
+    </div>
+
+    <!-- Navegação -->
     <header>
-        <div class="nav-inner">
-            <a href="#" class="logo">Lucro<span>Digital</span></a>
-            <nav class="nav-links">
-                <a href="#">Renda Extra</a>
-                <a href="#">Marketing Digital</a>
-                <a href="#">Investimentos</a>
-                <a href="#">Criptomoedas</a>
-                <a href="#" class="cta-button">Curso Grátis</a>
-            </nav>
+        <div class="header-inner">
+            <div class="logo" onclick="app.goHome()">Rota<span>Fortuna</span></div>
+            <button class="nav-btn" onclick="app.goHome()">Início</button>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Conquiste sua Liberdade Financeira</h1>
-        <p>Guias práticos, tutoriais passo-a-passo e estratégias validadas para você ganhar dinheiro na internet em 2025.</p>
-    </section>
-
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <div class="ad-space ad-banner">Publicidade Google Adsense (Topo)</div>
-    </div>
-
+    <!-- Estrutura Principal -->
     <div class="container">
-        <main>
-            
-            <article class="post-card">
-                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Planta crescendo sobre moedas" class="post-img">
-                <div class="post-body">
-                    <span class="meta-tag">Renda Passiva</span>
-                    <h2 class="post-title">Como Ganhar R$ 100/dia com Fundos Imobiliários</h2>
-                    <p class="post-text">Você sabia que é possível receber "aluguel" sem ter um imóvel? Descubra como funcionam os FIIs e veja uma carteira recomendada para iniciantes começarem com menos de R$ 50,00.</p>
-                    <a href="#" class="read-btn">Ler artigo completo →</a>
-                </div>
-            </article>
-
-            <div class="ad-space ad-banner" style="height: 120px;">Publicidade Google (Entre Posts)</div>
-
-            <article class="post-card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laptop com gráficos" class="post-img">
-                <div class="post-body">
-                    <span class="meta-tag">Marketing Digital</span>
-                    <h2 class="post-title">O Guia Definitivo do Google AdSense 2025</h2>
-                    <p class="post-text">Aprenda a otimizar seu site para aumentar o RPM. Revelamos os nichos que mais pagam por clique e onde posicionar seus banners para maximizar o lucro.</p>
-                    <a href="#" class="read-btn">Ler artigo completo →</a>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Aplicativo de celular" class="post-img">
-                <div class="post-body">
-                    <span class="meta-tag">Apps e Tecnologia</span>
-                    <h2 class="post-title">5 Aplicativos que Pagam no Cadastro</h2>
-                    <p class="post-text">Testamos 20 aplicativos populares. Descubra quais realmente pagam via Pix na hora e quais são perda de tempo. Lista atualizada com provas de pagamento.</p>
-                    <a href="#" class="read-btn">Ler artigo completo →</a>
-                </div>
-            </article>
-
+        
+        <main id="main-content">
+            <!-- Conteúdo será injetado pela PARTE 2 -->
         </main>
 
-        <aside>
+        <aside class="sidebar">
             <div class="widget">
-                <h3>Quem Somos</h3>
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Equipe trabalhando">
-                <p style="color:var(--gray); font-size:0.95rem;">Somos especialistas em desmistificar o mercado financeiro. Nossa missão é colocar dinheiro no seu bolso com dicas honestas.</p>
-            </div>
-
-            <div class="ad-space ad-sidebar">
-                Publicidade (300x250)
+                <h4>Patrocinado</h4>
+                <!-- ANÚNCIO SIDEBAR -->
+                <div class="ad-placeholder" style="height: 600px; margin: 0;">
+                    Google AdSense (Vertical 160x600 ou 300x600)
+                </div>
             </div>
 
             <div class="widget">
-                <h3>Tópicos Populares</h3>
-                <ul class="cat-list">
-                    <li><a href="#">💰 Marketing de Afiliados</a></li>
-                    <li><a href="#">📈 Bolsa de Valores</a></li>
-                    <li><a href="#">🏠 Home Office</a></li>
-                    <li><a href="#">🤖 Inteligência Artificial</a></li>
+                <h4>Mais Lidos da Semana</h4>
+                <ul class="popular-list">
+                    <li onclick="app.triggerArticle(0)">Como dobrar a renda em 6 meses</li>
+                    <li onclick="app.triggerArticle(1)">O fim da Poupança</li>
+                    <li onclick="app.triggerArticle(2)">Psicologia do Dinheiro</li>
+                    <li onclick="app.triggerArticle(3)">Nômades Digitais: A Verdade</li>
                 </ul>
             </div>
-
-            <div class="widget" style="background: var(--dark); color: white; border: none;">
-                <h3 style="border-color: var(--primary);">Curso Gratuito</h3>
-                <p style="margin-bottom: 1rem; opacity: 0.8;">Inscreva-se para receber nosso E-book: "Do Zero ao Primeiro Milhão".</p>
-                <input type="email" placeholder="Seu e-mail principal" style="width: 100%; padding: 10px; border-radius: 4px; border: none; margin-bottom: 10px;">
-                <button style="width: 100%; padding: 10px; background: var(--primary); color: white; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;">Baixar Agora</button>
-            </div>
         </aside>
+
     </div>
+<!-- FIM DA PARTE 1 -->
+    <!-- INICIO DA PARTE 2 -->
+    <script>
+        // --- BASE DE DADOS DE ARTIGOS ---
+        const articles = [
+            {
+                id: 0,
+                category: "Investimentos",
+                title: "O Aluguel Invisível: Como recebo R$ 2.000 sem ter imóveis",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                readTime: "8 min de leitura",
+                excerpt: "Esqueça a dor de cabeça de inquilinos e reformas. Descubra a estratégia dos 'Barões do Tijolo Digital' e como você pode começar com o preço de um café.",
+                content: [
+                    "Eu sempre acreditei no 'Sonho Brasileiro': comprar um apartamento, alugar e viver da renda na aposentadoria. Parecia o plano perfeito, até que fiz as contas.",
+                    "Um apartamento médio em Lisboa ou São Paulo custa cerca de R$ 500.000. O aluguel líquido? Talvez R$ 2.000. Isso dá um retorno de 0,4% ao mês. Sem contar o Imposto de Renda, a vacância (quando o imóvel fica vazio) e o condomínio que vira sua dívida.",
+                    "Foi numa tarde frustrante, lidando com um vazamento no banheiro de um inquilino, que descobri os <strong>Fundos Imobiliários (FIIs)</strong>.",
+                    "## O Que São os FIIs e Por Que os Ricos Amam",
+                    "Imagine que você pudesse ser dono de 0,001% do Shopping mais luxuoso da cidade. Ou de um galpão gigantesco alugado para a Amazon. É isso que um Fundo Imobiliário faz.",
+                    "Você compra 'cotas' na bolsa de valores (sim, igual comprar ações, mas muito menos volátil). O fundo pega o dinheiro de milhares de pessoas, compra imóveis gigantescos, cobra aluguel de grandes empresas e deposita 95% do lucro na sua conta. Todo. Santo. Mês.",
+                    "E o melhor: <strong>Isento de Imposto de Renda</strong> para pessoas físicas (no Brasil).",
+                    "## A Matemática da Bola de Neve",
+                    "Vamos falar de números reais. Se você investir R$ 100.000 em um bom fundo de papel (que investe em dívida imobiliária), hoje você consegue um retorno médio de 1% ao mês. Isso são R$ 1.000 na conta, limpo.",
+                    "Mas o segredo não é sacar esse dinheiro. É o efeito dos Juros Compostos.",
+                    "No mês 1, você ganha R$ 1.000. Você compra mais cotas. No mês 2, você ganha sobre os R$ 100.000 iniciais E sobre os novos R$ 1.000. Em 10 anos, essa curva se torna exponencial.",
+                    "## Começando com R$ 10,00",
+                    "Ao contrário de um imóvel físico, onde você precisa de uma entrada gigante, existem FIIs 'Base 10'. Com o preço de um pastel, você compra uma cota do MXRF11 ou VGHF11 (exemplos didáticos, não recomendação).",
+                    "A minha estratégia atual consiste em: 40% em Galpões Logísticos (segurança), 30% em Papéis (alto rendimento) e 30% em Shoppings (crescimento).",
+                    "Hoje, não atendo mais ligações sobre vazamentos. Apenas checo meu celular no dia 15 e vejo o 'aluguel invisível' caindo na conta."
+                ]
+            },
+            {
+                id: 1,
+                category: "Carreira Digital",
+                title: "A Máquina de Vendas Silenciosa: De Desempregado a Copywriter",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                readTime: "12 min de leitura",
+                excerpt: "Eles diziam que 'ganhar dinheiro na internet' era golpe. Eu provei o contrário usando apenas um notebook velho e o poder das palavras persuasivas.",
+                content: [
+                    "Em 2020, o mundo parou. E minha renda também. Fui demitido do meu cargo administrativo e me vi com 3 meses de seguro-desemprego e um aluguel para pagar.",
+                    "Passei semanas enviando currículos sem resposta. No desespero, comecei a pesquisar 'como ganhar dinheiro online'. Encontrei de tudo: pirâmides, jogos de aposta, pesquisas que pagam centavos.",
+                    "Até que esbarrei em um termo estranho: <strong>Copywriting</strong>.",
+                    "## O Poder de Vender sem Vender",
+                    "Copywriting é a arte de escrever textos que vendem. Sabe aquele e-mail que te fez comprar um curso? Copywriting. Aquele anúncio do YouTube que você não pulou? Copywriting.",
+                    "Descobri que empresas estavam desesperadas por pessoas que soubessem escrever anúncios para o Facebook e Google. Elas tinham o produto, mas não sabiam como falar com o cliente.",
+                    "## Meu Primeiro Cliente de R$ 500",
+                    "Ofereci meus serviços de graça para uma pizzaria do bairro. O dono postava fotos feias no Instagram. Eu propus: 'Deixe-me escrever as legendas por uma semana. Se as vendas aumentarem, você me paga'.",
+                    "Usei gatilhos mentais básicos: Escassez ('Apenas 10 pizzas nessa promoção') e Urgência ('Só até as 20h').",
+                    "As vendas subiram 30%. Ele me pagou R$ 500 sorrindo. Ali, eu entendi que não precisava de um chefe. Eu precisava de habilidade.",
+                    "## A Escala para R$ 10k",
+                    "Comecei a prospectar e-commerces. Em vez de vender 'textos', eu vendia 'aumento de conversão'. Cobrei R$ 2.000 por página de vendas.",
+                    "Em 6 meses, eu tinha 5 clientes fixos. Trabalhava de casa, fazia meus horários. A máquina de vendas silenciosa não era um software mágico, era a habilidade de persuadir através da escrita.",
+                    "Se você quer entrar no digital, esqueça 'dinheiro fácil'. Aprenda uma habilidade difícil: Copy, Tráfego Pago ou Design. É aí que o dinheiro real está."
+                ]
+            },
+            {
+                id: 2,
+                category: "Psicologia Financeira",
+                title: "O Café de 1 Milhão: Por que você continua pobre ganhando bem",
+                image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                readTime: "10 min de leitura",
+                excerpt: "Não é sobre quanto você ganha, é sobre quanto você mantém. A armadilha do estilo de vida inflacionado e como o minimalismo financeiro pode salvar sua década.",
+                content: [
+                    "Conheço um médico que ganha R$ 40.000 por mês e está endividado. Conheço um motorista de aplicativo que ganha R$ 4.000 e tem R$ 100.000 investidos. Como isso é possível?",
+                    "A resposta está na <strong>Inflação do Estilo de Vida</strong>.",
+                    "## A Corrida dos Ratos",
+                    "Quando somos promovidos, nossa primeira reação não é 'vou investir mais'. É 'vou trocar de carro' ou 'vou mudar para um apartamento maior'.",
+                    "Ganhamos mais, gastamos mais. O dinheiro entra e sai na mesma velocidade. Robert Kiyosaki chama isso de 'Corrida dos Ratos'. Você corre na roda, mas não sai do lugar.",
+                    "## O Teste do Café",
+                    "Não estou dizendo para cortar o cafézinho. O café não te deixa pobre. O que te deixa pobre são as parcelas grandes e fixas.",
+                    "O financiamento do carro de luxo (que desvaloriza 20% ao ano). A assinatura do clube que você não vai. O cartão de crédito usado como extensão do salário.",
+                    "## A Regra 50-30-20",
+                    "A virada de chave acontece quando você automatiza a riqueza. Assim que o salário cai, eu aplico a regra:",
+                    "50% para Necessidades (Aluguel, comida, luz).",
+                    "30% para Desejos (Jantar fora, Netflix, viagens).",
+                    "20% para Liberdade (Investimentos).",
+                    "Esses 20% somem da conta no dia 1. Eu finjo que ganho menos. É doloroso no começo, mas em 5 anos, esses 20% investidos a 12% ao ano se tornam uma máquina de liberdade.",
+                    "Riqueza é o que você não vê. É o dinheiro que não foi gasto em status para impressionar pessoas que você nem gosta."
+                ]
+            },
+            {
+                id: 3,
+                category: "Tendências",
+                title: "Nômades Digitais: A verdade nua e crua sobre trabalhar viajando",
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                readTime: "15 min de leitura",
+                excerpt: "Instagram vs Realidade. Trabalhei de Bali, Lisboa e Tailândia. Conto os custos ocultos, a solidão e a liberdade que ninguém mostra nas fotos bonitas.",
+                content: [
+                    "A foto é clássica: um laptop aberto de frente para uma praia azul-turquesa, um drink de coco ao lado. #OfficeOfTheDay. Eu fui essa pessoa. E vou te contar: trabalhar na praia é horrível.",
+                    "O sol reflete na tela, a areia entra no teclado e a internet cai a cada 10 minutos. A realidade do Nômade Digital é bem menos glamourosa, mas ainda assim, libertadora.",
+                    "## O Custo de Vida em Moeda Forte",
+                    "O segredo do nomadismo moderno é a 'Arbitragem Geográfica'. Ganhar em Dólar ou Euro e gastar em Real, Peso ou Baht.",
+                    "Viver em Chiang Mai (Tailândia) ou Bali (Indonésia) custa cerca de US$ 1.000 por mês com luxo. Piscina, coworking, comida fora todo dia. Tente viver com esse padrão em Nova York ou Londres.",
+                    "## A Solidão da Estrada",
+                    "Ninguém fala sobre isso. Você faz amigos incríveis, mas eles vão embora em duas semanas. Você está sempre dizendo adeus.",
+                    "A rotina de trabalho é intensa. Você não está de férias. Você precisa entregar projetos, fazer reuniões em fusos horários malucos (3 da manhã para falar com o Brasil).",
+                    "## Vale a Pena?",
+                    "Sim, se você busca experiências, não fuga. A liberdade de fechar o computador numa terça-feira e ir visitar um templo budista não tem preço.",
+                    "Mas exige disciplina espartana. Se você não consegue trabalhar focado no seu quarto em Osasco, não vai conseguir trabalhar focado num café em Paris.",
+                    "O nomadismo digital não resolve seus problemas internos, apenas muda o cenário onde eles acontecem. Mas que cenário lindo."
+                ]
+            }
+        ];
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h4 style="font-size: 1.2rem; display: flex; align-items: center; gap: 5px;">Lucro<span style="color:var(--primary)">Digital</span></h4>
-                <p style="font-size: 0.9rem;">O melhor conteúdo sobre finanças pessoais e empreendedorismo digital do Brasil.</p>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <div class="footer-links">
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Isenção de Responsabilidade</a>
-                </div>
-            </div>
-            <div>
-                <h4>Contato</h4>
-                <div class="footer-links">
-                    <a href="#">Anuncie Conosco</a>
-                    <a href="#">Trabalhe Conosco</a>
-                    <a href="#">suporte@lucrodigital.com</a>
-                </div>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #374151; font-size: 0.8rem;">
-            &copy; 2025 Lucro Digital. Todos os direitos reservados.
-        </div>
-    </footer>
+        // --- SISTEMA APP ---
+        const app = {
+            main: document.getElementById('main-content'),
+            modal: document.getElementById('interstitial-modal'),
+            btnSkip: document.getElementById('btn-skip'),
+            targetId: null,
 
+            // 1. Renderizar Home (Grid)
+            goHome: function() {
+                window.scrollTo(0,0);
+                document.getElementById('progress-bar').style.width = '0%';
+                
+                let html = '<div class="grid-posts">';
+                articles.forEach(art => {
+                    html += `
+                        <article class="post-card">
+                            <img src="${art.image}" alt="${art.title}" class="post-img">
+                            <div class="post-body">
+                                <span class="category-tag">${art.category}</span>
+                                <h2 class="post-title" onclick="app.triggerArticle(${art.id})">${art.title}</h2>
+                                <p class="post-excerpt">${art.excerpt}</p>
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-size:0.8rem; color:#94a3b8;">⏱ ${art.readTime}</span>
+                                    <button class="read-btn" onclick="app.triggerArticle(${art.id})">Ler Artigo Completo ➔</button>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                });
+                html += '</div>';
+                this.main.innerHTML = html;
+            },
+
+            // 2. Acionar o Interstitial
+            triggerArticle: function(id) {
+                this.targetId = id;
+                this.modal.style.display = 'flex';
+                
+                let seconds = 5;
+                this.btnSkip.disabled = true;
+                this.btnSkip.classList.remove('active');
+                this.btnSkip.innerText = `A preparar conteúdo... (${seconds})`;
+                
+                const timer = setInterval(() => {
+                    seconds--;
+                    this.btnSkip.innerText = `A preparar conteúdo... (${seconds})`;
+                    
+                    if (seconds <= 0) {
+                        clearInterval(timer);
+                        document.getElementById('loader').style.display = 'none';
+                        this.btnSkip.innerText = "Aceder ao Artigo";
+                        this.btnSkip.classList.add('active');
+                        this.btnSkip.disabled = false;
+                    }
+                }, 1000);
+            },
+
+            // 3. Pular Ad e Mostrar Conteúdo
+            skipAd: function() {
+                this.modal.style.display = 'none';
+                document.getElementById('loader').style.display = 'inline-block';
+                this.renderArticle(this.targetId);
+            },
+
+            // 4. Renderizar o Artigo com Injeção de Ads
+            renderArticle: function(id) {
+                window.scrollTo(0,0);
+                const art = articles.find(a => a.id === id);
+                
+                let contentHTML = '';
+                art.content.forEach((paragraph, index) => {
+                    if (paragraph.startsWith('##')) {
+                        contentHTML += `<h2>${paragraph.replace('## ', '')}</h2>`;
+                    } else {
+                        if(index === 0) contentHTML += `<p class="dropcap">${paragraph}</p>`;
+                        else contentHTML += `<p>${paragraph}</p>`;
+                    }
+
+                    // Injeta anúncio após parágrafos específicos
+                    if (index === 2 || index === 5 || index === 8) {
+                        contentHTML += `<div class="ad-placeholder">Publicidade Dinâmica (In-Article)</div>`;
+                    }
+                });
+
+                this.main.innerHTML = `
+                    <div class="article-container">
+                        <button onclick="app.goHome()" style="background:none; border:none; color:#64748b; cursor:pointer; margin-bottom:20px;">← Voltar para Home</button>
+                        <div class="article-header">
+                            <span class="category-tag">${art.category}</span>
+                            <h1>${art.title}</h1>
+                            <div class="article-meta">Escrito por <strong>Editor Chefe</strong> • ${art.readTime}</div>
+                        </div>
+                        <img src="${art.image}" style="width:100%; height:400px; object-fit:cover; border-radius:8px; margin-bottom:40px;" alt="Capa">
+                        
+                        <div class="article-content">
+                            ${contentHTML}
+                        </div>
+
+                        <div class="ad-placeholder" style="height:250px; margin-top:50px; border-color:var(--gold);">
+                            Anúncio Final (Matched Content)
+                        </div>
+
+                        <div style="background:#f8fafc; padding:30px; border-radius:8px; margin-top:40px; text-align:center;">
+                            <h3>Gostou deste conteúdo?</h3>
+                            <p style="margin:10px 0;">Compartilhe para desbloquear mais estratégias.</p>
+                            <button class="nav-btn" style="background:var(--primary); color:white;" onclick="app.goHome()">Ler Próxima História</button>
+                        </div>
+                    </div>
+                `;
+            },
+        };
+
+        // Scroll listener para barra de progresso
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        app.goHome();
+
+    </script>
 </body>
 </html>
