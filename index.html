@@ -1,402 +1,409 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota da Fortuna | Estratégias de Elite para Renda Digital</title>
-    <meta name="description" content="Artigos aprofundados sobre economia comportamental, investimentos e negócios digitais.">
+    <title>Blog Universal - Tecnologia, Finanças e Educação</title>
+    <meta name="description" content="Artigos completos sobre tecnologia, finanças, educação e estilo de vida. Conteúdo aprofundado para leitores exigentes.">
     
-    <!-- SCRIPT DO GOOGLE ADSENSE (JÁ INSERIDO) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6276110926129932"
-     crossorigin="anonymous"></script>
-
-    <!-- Fontes Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6276110926129932" crossorigin="anonymous"></script>
 
     <style>
         :root {
-            --primary: #0f172a; /* Azul Navy Profundo */
-            --gold: #d4af37; /* Dourado Premium */
-            --action: #2563eb; /* Azul Ação */
-            --bg: #f8fafc;
-            --text: #334155;
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg: #f3f4f6;
+            --text: #1f2937;
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: 'Lato', sans-serif;
-            line-height: 1.8;
-            overflow-x: hidden;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
-
-        /* --- Barra de Progresso --- */
-        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: transparent; z-index: 200; }
-        .progress-bar { height: 100%; background: var(--gold); width: 0%; transition: width 0.1s; }
-
-        /* --- Header --- */
-        header { background: var(--white); border-bottom: 1px solid #e2e8f0; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo { font-size: 1.8rem; font-weight: 900; color: var(--primary); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
-        .logo span { color: var(--gold); }
-        .nav-btn { background: transparent; border: 1px solid var(--primary); padding: 8px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); color: var(--gold); }
-
-        /* --- Modal Interstitial --- */
-        #interstitial-modal {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            z-index: 9999; display: none; justify-content: center; align-items: center;
-            flex-direction: column; backdrop-filter: blur(5px);
+        /* Tradutor Google */
+        #google_translate_element {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
-        .modal-card {
-            background: white; width: 90%; max-width: 450px; padding: 30px;
-            border-radius: 12px; text-align: center; position: relative;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .loader-ring { display: inline-block; width: 64px; height: 64px; margin-bottom: 20px; }
-        .loader-ring:after {
-            content: " "; display: block; width: 46px; height: 46px; margin: 8px; border-radius: 50%;
-            border: 5px solid var(--primary); border-color: var(--primary) transparent var(--primary) transparent;
-            animation: ring 1.2s linear infinite;
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        @keyframes ring { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 { margin: 0; font-size: 2.5rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Estilo dos Artigos */
+        .article-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .category-tag {
+            background-color: #e0e7ff;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        h2 { color: var(--secondary); margin-top: 0; font-size: 2rem; }
         
-        .ad-spot-modal { width: 300px; height: 250px; background: #f1f5f9; margin: 20px auto; display: flex; align-items: center; justify-content: center; color: #94a3b8; border: 1px dashed #cbd5e1; }
-        
-        .skip-btn {
-            background: #cbd5e1; color: #64748b; border: none; padding: 12px 0; width: 100%;
-            font-weight: bold; font-size: 1rem; border-radius: 6px; cursor: not-allowed; transition: 0.3s;
+        .content-text {
+            font-size: 1.1rem;
+            text-align: justify;
         }
-        .skip-btn.active { background: var(--action); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
 
-        /* --- Layout Grid --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 320px; gap: 50px; }
-
-        /* --- Cards da Home --- */
-        .grid-posts { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        .post-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-        .post-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .post-img { width: 100%; height: 280px; object-fit: cover; }
-        .post-body { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        .category-tag { color: var(--action); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .post-title { font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; cursor: pointer; }
-        .post-excerpt { color: #64748b; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
-        .read-btn { align-self: flex-start; background: transparent; color: var(--primary); font-weight: bold; border-bottom: 2px solid var(--gold); padding-bottom: 2px; cursor: pointer; }
-
-        /* --- Artigo Aberto --- */
-        .article-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .article-header { text-align: center; margin-bottom: 40px; }
-        .article-header h1 { font-size: 2.8rem; margin: 15px 0; line-height: 1.1; }
-        .article-meta { color: #94a3b8; font-size: 0.9rem; font-style: italic; }
-        .article-content { font-size: 1.25rem; color: #334155; }
-        .article-content p { margin-bottom: 2rem; }
-        .article-content h2 { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1.5rem; position: relative; }
-        .article-content h2::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background: var(--gold); }
-        .dropcap::first-letter { font-size: 4rem; float: left; line-height: 0.8; margin-right: 15px; color: var(--primary); font-family: 'Playfair Display', serif; font-weight: 900; }
+        /* Rodapé e Políticas */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
         
-        /* --- Anúncios --- */
-        .ad-placeholder { width: 100%; height: 200px; background: #f8fafc; border: 2px dashed #e2e8f0; display: flex; align-items: center; justify-content: center; margin: 3rem 0; color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; position: relative; }
-        .ad-placeholder::before { content: 'Publicidade'; position: absolute; top: 10px; right: 10px; font-size: 0.6rem; color: #cbd5e1; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a { color: #d1d5db; text-decoration: none; }
 
-        /* --- Sidebar --- */
-        .sidebar { position: sticky; top: 100px; height: fit-content; }
-        .widget { background: white; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 30px; }
-        .widget h4 { font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9; }
-        .popular-list li { list-style: none; padding: 12px 0; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; font-size: 1rem; }
-        .popular-list li:hover { color: var(--action); padding-left: 5px; }
-
-        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } .post-title { font-size: 1.5rem; } }
+        @media (max-width: 768px) {
+            .article-image { height: 250px; }
+            .nav-container { flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Barra de Progresso -->
-    <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Modal Interstitial -->
-    <div id="interstitial-modal">
-        <div class="modal-card">
-            <h3 style="margin-bottom: 10px;">A preparar o conteúdo exclusivo...</h3>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 20px;">Apoie o nosso jornalismo independente.</p>
-            
-            <!-- ANÚNCIO DE ALTO VALOR (300x250) -->
-            <div class="ad-spot-modal">
-                Espaço para Anúncio AdSense (300x250)
-            </div>
-
-            <div class="loader-ring" id="loader"></div>
-            
-            <button id="btn-skip" class="skip-btn" onclick="app.skipAd()">Aguarde 5s...</button>
-        </div>
-    </div>
-
-    <!-- Navegação -->
     <header>
-        <div class="header-inner">
-            <div class="logo" onclick="app.goHome()">Rota<span>Fortuna</span></div>
-            <button class="nav-btn" onclick="app.goHome()">Início</button>
+        <div class="nav-container">
+            <a href="#" class="logo">Blog Universal</a>
+            <nav>
+                <ul>
+                    <li><a href="#tech">Tecnologia</a></li>
+                    <li><a href="#fin">Finanças</a></li>
+                    <li><a href="#edu">Educação</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Estrutura Principal -->
-    <div class="container">
-        
-        <main id="main-content">
-            <!-- Conteúdo será injetado pela PARTE 2 -->
-        </main>
+    <section class="hero">
+        <h1>Conhecimento Profundo</h1>
+        <p>Artigos detalhados sobre o que move o mundo moderno.</p>
+    </section>
 
-        <aside class="sidebar">
-            <div class="widget">
-                <h4>Patrocinado</h4>
-                <!-- ANÚNCIO SIDEBAR -->
-                <div class="ad-placeholder" style="height: 600px; margin: 0;">
-                    Espaço para Anúncio Vertical (160x600)
+    <main class="container">
+
+        <article class="article-card" id="artigo1">
+            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1000&auto=format&fit=crop" alt="Finanças Pessoais" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Finanças</span>
+                <h2>Como Começar a Investir com Pouco Dinheiro: O Guia Definitivo para 2025</h2>
+                <div class="content-text">
+                    <p>Muitas pessoas acreditam que investir é um privilégio reservado apenas para os ricos, mas essa mentalidade está mudando drasticamente com o acesso à tecnologia e às novas plataformas financeiras. Começar a investir com pouco dinheiro não é apenas possível; é uma das decisões mais inteligentes que você pode tomar para garantir sua liberdade financeira no futuro. O poder dos juros compostos trabalha melhor quanto mais cedo você começa, independentemente do valor inicial. Neste artigo, vamos explorar estratégias práticas, seguras e rentáveis para quem está dando os primeiros passos no mundo dos investimentos.</p>
+                    <p>O primeiro passo é organizar suas finanças. Antes de comprar sua primeira ação ou título do Tesouro Direto, é crucial eliminar dívidas de juros altos, como cartão de crédito e cheque especial. Em seguida, a construção de uma reserva de emergência é fundamental. Especialistas recomendam guardar o equivalente a seis meses do seu custo de vida em uma aplicação de liquidez diária. Isso garante que você não precisará resgatar seus investimentos de longo prazo em um momento inoportuno caso surja um imprevisto médico ou perda de emprego.</p>
+                    <p>Com a casa em ordem, o mercado oferece opções acessíveis. Os ETFs (Exchange Traded Funds), por exemplo, permitem que você compre uma cesta de ações diversificadas com valores muito baixos, muitas vezes menos de R$ 50,00. Outra opção popular no Brasil são os Fundos Imobiliários (FIIs), que pagam dividendos mensais isentos de imposto de renda para pessoa física, permitindo que você reinvista esses proventos e crie uma bola de neve positiva. A chave não é a quantidade de dinheiro, mas a constância dos aportes e a paciência de longo prazo.</p>
+                    <p>Por fim, a educação contínua é seu maior ativo. Leia relatórios, acompanhe o mercado, mas cuidado com promessas de dinheiro fácil. O verdadeiro investidor foca no longo prazo, na diversificação e na gestão de risco. Comece hoje, mesmo que seja com R$ 30,00 no Tesouro Direto, e veja seu patrimônio crescer ao longo dos anos.</p>
                 </div>
             </div>
+        </article>
 
-            <div class="widget">
-                <h4>Mais Lidos da Semana</h4>
-                <ul class="popular-list">
-                    <li onclick="app.triggerArticle(0)">Como dobrar a renda em 6 meses</li>
-                    <li onclick="app.triggerArticle(1)">O fim da Poupança</li>
-                    <li onclick="app.triggerArticle(2)">Psicologia do Dinheiro</li>
-                    <li onclick="app.triggerArticle(3)">Nômades Digitais: A Verdade</li>
-                </ul>
+        <article class="article-card" id="tech">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000&auto=format&fit=crop" alt="Inteligência Artificial" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Tecnologia</span>
+                <h2>A Revolução da Inteligência Artificial: O Que Esperar da Próxima Década</h2>
+                <div class="content-text">
+                    <p>A Inteligência Artificial (IA) deixou de ser um conceito de ficção científica para se tornar uma parte integrante do nosso cotidiano. Desde assistentes virtuais em nossos smartphones até algoritmos complexos que detectam fraudes bancárias, a IA está redefinindo a maneira como vivemos e trabalhamos. No entanto, o que vimos até agora é apenas a ponta do iceberg. A próxima década promete avanços que transformarão indústrias inteiras, da medicina à educação, trazendo desafios éticos e oportunidades sem precedentes.</p>
+                    <p>Um dos campos mais promissores é a IA Generativa, capaz de criar texto, imagens, códigos e até vídeos com uma qualidade impressionante. Isso vai revolucionar a economia criativa, permitindo que pequenas empresas produzam conteúdo de nível hollywoodiano com orçamentos reduzidos. Na medicina, algoritmos de aprendizado profundo já estão sendo usados para diagnosticar doenças como o câncer em estágios iniciais com uma precisão superior à dos médicos humanos, além de acelerar a descoberta de novos medicamentos.</p>
+                    <p>Contudo, essa revolução não vem sem riscos. A automação de tarefas cognitivas levanta questões sérias sobre o futuro do emprego. Enquanto algumas profissões desaparecerão, outras surgirão, exigindo habilidades focadas em criatividade, empatia e gestão estratégica — áreas onde a IA ainda não consegue competir com o ser humano. A requalificação profissional será a palavra de ordem para a força de trabalho global.</p>
+                    <p>Além disso, a ética na IA será um tema central. Como garantir que os algoritmos não perpetuem preconceitos raciais ou de gênero? Como proteger a privacidade dos dados em um mundo onde tudo é monitorado? Governos e empresas precisarão trabalhar juntos para criar regulamentações que fomentem a inovação sem comprometer os direitos humanos fundamentais.</p>
+                </div>
             </div>
-        </aside>
+        </article>
 
-    </div>
-<!-- FIM DA PARTE 1 -->
-    <!-- INICIO DA PARTE 2 -->
-    <script>
-        // --- BASE DE DADOS DE ARTIGOS ---
-        const articles = [
-            {
-                id: 0,
-                category: "Investimentos",
-                title: "O Aluguel Invisível: Como recebo R$ 2.000 sem ter imóveis",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                readTime: "8 min de leitura",
-                excerpt: "Esqueça a dor de cabeça de inquilinos e reformas. Descubra a estratégia dos 'Barões do Tijolo Digital' e como você pode começar com o preço de um café.",
-                content: [
-                    "Eu sempre acreditei no 'Sonho Brasileiro': comprar um apartamento, alugar e viver da renda na aposentadoria. Parecia o plano perfeito, até que fiz as contas.",
-                    "Um apartamento médio em Lisboa ou São Paulo custa cerca de R$ 500.000. O aluguel líquido? Talvez R$ 2.000. Isso dá um retorno de 0,4% ao mês. Sem contar o Imposto de Renda, a vacância (quando o imóvel fica vazio) e o condomínio que vira sua dívida.",
-                    "Foi numa tarde frustrante, lidando com um vazamento no banheiro de um inquilino, que descobri os <strong>Fundos Imobiliários (FIIs)</strong>.",
-                    "## O Que São os FIIs e Por Que os Ricos Amam",
-                    "Imagine que você pudesse ser dono de 0,001% do Shopping mais luxuoso da cidade. Ou de um galpão gigantesco alugado para a Amazon. É isso que um Fundo Imobiliário faz.",
-                    "Você compra 'cotas' na bolsa de valores (sim, igual comprar ações, mas muito menos volátil). O fundo pega o dinheiro de milhares de pessoas, compra imóveis gigantescos, cobra aluguel de grandes empresas e deposita 95% do lucro na sua conta. Todo. Santo. Mês.",
-                    "E o melhor: <strong>Isento de Imposto de Renda</strong> para pessoas físicas (no Brasil).",
-                    "## A Matemática da Bola de Neve",
-                    "Vamos falar de números reais. Se você investir R$ 100.000 em um bom fundo de papel (que investe em dívida imobiliária), hoje você consegue um retorno médio de 1% ao mês. Isso são R$ 1.000 na conta, limpo.",
-                    "Mas o segredo não é sacar esse dinheiro. É o efeito dos Juros Compostos.",
-                    "No mês 1, você ganha R$ 1.000. Você compra mais cotas. No mês 2, você ganha sobre os R$ 100.000 iniciais E sobre os novos R$ 1.000. Em 10 anos, essa curva se torna exponencial.",
-                    "## Começando com R$ 10,00",
-                    "Ao contrário de um imóvel físico, onde você precisa de uma entrada gigante, existem FIIs 'Base 10'. Com o preço de um pastel, você compra uma cota do MXRF11 ou VGHF11 (exemplos didáticos, não recomendação).",
-                    "A minha estratégia atual consiste em: 40% em Galpões Logísticos (segurança), 30% em Papéis (alto rendimento) e 30% em Shoppings (crescimento).",
-                    "Hoje, não atendo mais ligações sobre vazamentos. Apenas checo meu celular no dia 15 e vejo o 'aluguel invisível' caindo na conta."
-                ]
-            },
-            {
-                id: 1,
-                category: "Carreira Digital",
-                title: "A Máquina de Vendas Silenciosa: De Desempregado a Copywriter",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                readTime: "12 min de leitura",
-                excerpt: "Eles diziam que 'ganhar dinheiro na internet' era golpe. Eu provei o contrário usando apenas um notebook velho e o poder das palavras persuasivas.",
-                content: [
-                    "Em 2020, o mundo parou. E minha renda também. Fui demitido do meu cargo administrativo e me vi com 3 meses de seguro-desemprego e um aluguel para pagar.",
-                    "Passei semanas enviando currículos sem resposta. No desespero, comecei a pesquisar 'como ganhar dinheiro online'. Encontrei de tudo: pirâmides, jogos de aposta, pesquisas que pagam centavos.",
-                    "Até que esbarrei em um termo estranho: <strong>Copywriting</strong>.",
-                    "## O Poder de Vender sem Vender",
-                    "Copywriting é a arte de escrever textos que vendem. Sabe aquele e-mail que te fez comprar um curso? Copywriting. Aquele anúncio do YouTube que você não pulou? Copywriting.",
-                    "Descobri que empresas estavam desesperadas por pessoas que soubessem escrever anúncios para o Facebook e Google. Elas tinham o produto, mas não sabiam como falar com o cliente.",
-                    "## Meu Primeiro Cliente de R$ 500",
-                    "Ofereci meus serviços de graça para uma pizzaria do bairro. O dono postava fotos feias no Instagram. Eu propus: 'Deixe-me escrever as legendas por uma semana. Se as vendas aumentarem, você me paga'.",
-                    "Usei gatilhos mentais básicos: Escassez ('Apenas 10 pizzas nessa promoção') e Urgência ('Só até as 20h').",
-                    "As vendas subiram 30%. Ele me pagou R$ 500 sorrindo. Ali, eu entendi que não precisava de um chefe. Eu precisava de habilidade.",
-                    "## A Escala para R$ 10k",
-                    "Comecei a prospectar e-commerces. Em vez de vender 'textos', eu vendia 'aumento de conversão'. Cobrei R$ 2.000 por página de vendas.",
-                    "Em 6 meses, eu tinha 5 clientes fixos. Trabalhava de casa, fazia meus horários. A máquina de vendas silenciosa não era um software mágico, era a habilidade de persuadir através da escrita.",
-                    "Se você quer entrar no digital, esqueça 'dinheiro fácil'. Aprenda uma habilidade difícil: Copy, Tráfego Pago ou Design. É aí que o dinheiro real está."
-                ]
-            },
-            {
-                id: 2,
-                category: "Psicologia Financeira",
-                title: "O Café de 1 Milhão: Por que você continua pobre ganhando bem",
-                image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                readTime: "10 min de leitura",
-                excerpt: "Não é sobre quanto você ganha, é sobre quanto você mantém. A armadilha do estilo de vida inflacionado e como o minimalismo financeiro pode salvar sua década.",
-                content: [
-                    "Conheço um médico que ganha R$ 40.000 por mês e está endividado. Conheço um motorista de aplicativo que ganha R$ 4.000 e tem R$ 100.000 investidos. Como isso é possível?",
-                    "A resposta está na <strong>Inflação do Estilo de Vida</strong>.",
-                    "## A Corrida dos Ratos",
-                    "Quando somos promovidos, nossa primeira reação não é 'vou investir mais'. É 'vou trocar de carro' ou 'vou mudar para um apartamento maior'.",
-                    "Ganhamos mais, gastamos mais. O dinheiro entra e sai na mesma velocidade. Robert Kiyosaki chama isso de 'Corrida dos Ratos'. Você corre na roda, mas não sai do lugar.",
-                    "## O Teste do Café",
-                    "Não estou dizendo para cortar o cafézinho. O café não te deixa pobre. O que te deixa pobre são as parcelas grandes e fixas.",
-                    "O financiamento do carro de luxo (que desvaloriza 20% ao ano). A assinatura do clube que você não vai. O cartão de crédito usado como extensão do salário.",
-                    "## A Regra 50-30-20",
-                    "A virada de chave acontece quando você automatiza a riqueza. Assim que o salário cai, eu aplico a regra:",
-                    "50% para Necessidades (Aluguel, comida, luz).",
-                    "30% para Desejos (Jantar fora, Netflix, viagens).",
-                    "20% para Liberdade (Investimentos).",
-                    "Esses 20% somem da conta no dia 1. Eu finjo que ganho menos. É doloroso no começo, mas em 5 anos, esses 20% investidos a 12% ao ano se tornam uma máquina de liberdade.",
-                    "Riqueza é o que você não vê. É o dinheiro que não foi gasto em status para impressionar pessoas que você nem gosta."
-                ]
-            },
-            {
-                id: 3,
-                category: "Tendências",
-                title: "Nômades Digitais: A verdade nua e crua sobre trabalhar viajando",
-                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                readTime: "15 min de leitura",
-                excerpt: "Instagram vs Realidade. Trabalhei de Bali, Lisboa e Tailândia. Conto os custos ocultos, a solidão e a liberdade que ninguém mostra nas fotos bonitas.",
-                content: [
-                    "A foto é clássica: um laptop aberto de frente para uma praia azul-turquesa, um drink de coco ao lado. #OfficeOfTheDay. Eu fui essa pessoa. E vou te contar: trabalhar na praia é horrível.",
-                    "O sol reflete na tela, a areia entra no teclado e a internet cai a cada 10 minutos. A realidade do Nômade Digital é bem menos glamourosa, mas ainda assim, libertadora.",
-                    "## O Custo de Vida em Moeda Forte",
-                    "O segredo do nomadismo moderno é a 'Arbitragem Geográfica'. Ganhar em Dólar ou Euro e gastar em Real, Peso ou Baht.",
-                    "Viver em Chiang Mai (Tailândia) ou Bali (Indonésia) custa cerca de US$ 1.000 por mês com luxo. Piscina, coworking, comida fora todo dia. Tente viver com esse padrão em Nova York ou Londres.",
-                    "## A Solidão da Estrada",
-                    "Ninguém fala sobre isso. Você faz amigos incríveis, mas eles vão embora em duas semanas. Você está sempre dizendo adeus.",
-                    "A rotina de trabalho é intensa. Você não está de férias. Você precisa entregar projetos, fazer reuniões em fusos horários malucos (3 da manhã para falar com o Brasil).",
-                    "## Vale a Pena?",
-                    "Sim, se você busca experiências, não fuga. A liberdade de fechar o computador numa terça-feira e ir visitar um templo budista não tem preço.",
-                    "Mas exige disciplina espartana. Se você não consegue trabalhar focado no seu quarto em Osasco, não vai conseguir trabalhar focado num café em Paris.",
-                    "O nomadismo digital não resolve seus problemas internos, apenas muda o cenário onde eles acontecem. Mas que cenário lindo."
-                ]
-            }
-        ];
+        <article class="article-card" id="edu">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop" alt="Educação Online" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Educação</span>
+                <h2>O Futuro do Aprendizado: Como o Ensino Híbrido Está Mudando as Escolas</h2>
+                <div class="content-text">
+                    <p>O modelo tradicional de educação, com alunos enfileirados ouvindo passivamente um professor, está sendo desafiado por novas metodologias que colocam o estudante no centro do processo. O ensino híbrido (blended learning), que combina o aprendizado presencial com o digital, surgiu como uma resposta eficaz às necessidades do século XXI, oferecendo flexibilidade e personalização que o ensino puramente presencial muitas vezes não consegue entregar.</p>
+                    <p>Uma das grandes vantagens do ensino híbrido é a possibilidade de personalização. Com o uso de plataformas adaptativas, os professores conseguem identificar exatamente onde cada aluno tem dificuldade e oferecer materiais complementares específicos. Isso permite que estudantes mais rápidos avancem sem tédio, enquanto aqueles que precisam de mais tempo recebam o apoio necessário, reduzindo a defasagem escolar.</p>
+                    <p>Além disso, a sala de aula invertida (flipped classroom) é uma técnica popular dentro desse modelo. Nela, o aluno estuda a teoria em casa através de vídeos e leituras, e usa o tempo em sala de aula para debates, projetos práticos e resolução de problemas com a mediação do professor. Isso transforma a escola em um espaço de criação e colaboração, não apenas de transmissão de informação.</p>
+                    <p>Para que essa revolução seja completa, no entanto, é preciso investir em infraestrutura e formação de professores. A tecnologia por si só não faz milagres; ela é uma ferramenta que precisa ser guiada por uma pedagogia sólida. O futuro da educação é humano, potencializado pelo digital, formando cidadãos mais críticos, autônomos e preparados para um mundo em constante mudança.</p>
+                </div>
+            </div>
+        </article>
 
-        // --- SISTEMA APP ---
-        const app = {
-            main: document.getElementById('main-content'),
-            modal: document.getElementById('interstitial-modal'),
-            btnSkip: document.getElementById('btn-skip'),
-            targetId: null,
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1544367563-12123d8975bd?q=80&w=1000&auto=format&fit=crop" alt="Saúde Mental" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Saúde</span>
+                <h2>Mindfulness e Meditação: Ferramentas Essenciais contra a Ansiedade Moderna</h2>
+                <div class="content-text">
+                    <p>Vivemos na era da informação, mas também na era da ansiedade. A hiperconectividade, as notificações constantes e a pressão por produtividade criaram um cenário onde o estresse crônico se tornou comum. Nesse contexto, práticas milenares como o Mindfulness (Atenção Plena) e a meditação ressurgem não como misticismo, mas como ferramentas comprovadas pela neurociência para recuperar o equilíbrio mental e a saúde física.</p>
+                    <p>Estudos mostram que a prática regular de meditação pode alterar fisicamente o cérebro, aumentando a densidade da massa cinzenta em áreas associadas à memória, empatia e regulação emocional. Apenas 10 minutos por dia podem reduzir significativamente os níveis de cortisol, o hormônio do estresse, melhorando a qualidade do sono e a capacidade de foco no trabalho e nos estudos.</p>
+                    <p>Começar é mais simples do que parece. Não é preciso "parar de pensar", o que é impossível, mas sim observar os pensamentos sem julgamento e trazê-los de volta para o presente, geralmente focando na respiração. Aplicativos guiados têm ajudado milhões de pessoas a darem os primeiros passos, desmistificando a ideia de que meditação é apenas para monges isolados nas montanhas.</p>
+                    <p>Incorporar o Mindfulness no dia a dia também envolve comer sem distrações, escutar ativamente durante uma conversa e fazer pausas conscientes. É um antídoto poderoso contra o piloto automático, permitindo que vivamos a vida com mais intenção, gratidão e menos reatividade aos problemas cotidianos.</p>
+                </div>
+            </div>
+        </article>
 
-            // 1. Renderizar Home (Grid)
-            goHome: function() {
-                window.scrollTo(0,0);
-                document.getElementById('progress-bar').style.width = '0%';
-                
-                let html = '<div class="grid-posts">';
-                articles.forEach(art => {
-                    html += `
-                        <article class="post-card">
-                            <img src="${art.image}" alt="${art.title}" class="post-img">
-                            <div class="post-body">
-                                <span class="category-tag">${art.category}</span>
-                                <h2 class="post-title" onclick="app.triggerArticle(${art.id})">${art.title}</h2>
-                                <p class="post-excerpt">${art.excerpt}</p>
-                                <div style="display:flex; justify-content:space-between; align-items:center;">
-                                    <span style="font-size:0.8rem; color:#94a3b8;">⏱ ${art.readTime}</span>
-                                    <button class="read-btn" onclick="app.triggerArticle(${art.id})">Ler Artigo Completo ➔</button>
-                                </div>
-                            </div>
-                        </article>
-                    `;
-                });
-                html += '</div>';
-                this.main.innerHTML = html;
-            },
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" alt="Empreendedorismo" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Negócios</span>
+                <h2>Do Zero ao Milhão: Passos Críticos para Criar uma Startup de Sucesso</h2>
+                <div class="content-text">
+                    <p>O sonho de criar o próprio negócio e alcançar a independência financeira move milhões de brasileiros. No entanto, o ecossistema de startups é brutal, e a maioria das empresas falha nos primeiros anos. A diferença entre o sucesso e o fracasso muitas vezes não está na genialidade da ideia, mas na execução e na capacidade de adaptação do empreendedor diante das adversidades do mercado.</p>
+                    <p>O primeiro passo crítico é validar a ideia. Antes de gastar rios de dinheiro desenvolvendo um produto complexo, crie um MVP (Produto Mínimo Viável). Teste sua hipótese com clientes reais, colete feedback e esteja disposto a "pivotar" (mudar a direção) se necessário. Apaixone-se pelo problema que você resolve, não pela sua solução inicial.</p>
+                    <p>A gestão financeira é outro pilar que derruba muitos gigantes em potencial. Misturar contas pessoais com as da empresa, não precificar corretamente e ignorar o fluxo de caixa são erros fatais. Conhecer seus números, margens e custo de aquisição de cliente (CAC) é obrigatório para quem deseja escalar de forma sustentável e atrair investidores anjos ou fundos de Venture Capital.</p>
+                    <p>Por fim, construa um time complementar. Ninguém constrói um império sozinho. Busque sócios e colaboradores que tenham habilidades que você não possui. Uma cultura organizacional forte, baseada em transparência e propósito, é o que manterá a equipe unida e motivada durante os momentos difíceis da jornada empreendedora.</p>
+                </div>
+            </div>
+        </article>
+                <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1000&auto=format&fit=crop" alt="Marketing Digital" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Marketing</span>
+                <h2>SEO em 2025: Como Posicionar seu Site no Topo do Google</h2>
+                <div class="content-text">
+                    <p>O Search Engine Optimization (SEO) é uma disciplina viva, que muda a cada atualização do algoritmo do Google. Em 2025, as regras do jogo estão mais sofisticadas do que nunca. Não basta mais encher um texto de palavras-chave; a experiência do usuário (UX), a autoridade do autor e a velocidade de carregamento tornaram-se fatores determinantes para quem deseja aparecer na primeira página das buscas orgânicas.</p>
+                    <p>A inteligência artificial do Google agora prioriza o conteúdo útil e humano. O conceito de E-E-A-T (Experiência, Especialização, Autoridade e Confiabilidade) é o norte para criadores de conteúdo. Isso significa que artigos escritos por especialistas reais, com profundidade e originalidade, têm muito mais peso do que textos genéricos gerados em massa. Construir uma marca pessoal forte e obter backlinks de sites respeitáveis continua sendo a moeda de ouro do SEO.</p>
+                    <p>A pesquisa por voz e a otimização para dispositivos móveis (Mobile First) já não são diferenciais, são obrigações. Com o aumento das assistentes virtuais, as pessoas fazem perguntas mais naturais e longas. Portanto, focar em palavras-chave de cauda longa (long tail) e responder às dúvidas específicas do usuário de forma direta é uma estratégia vencedora.</p>
+                    <p>Por fim, os Core Web Vitals, métricas que medem a estabilidade visual e a interatividade do site, devem ser monitorados constantemente. Um site lento não apenas frustra o usuário, como é punido severamente pelos motores de busca. Investir em hospedagem de qualidade e código limpo é investir no seu tráfego orgânico.</p>
+                </div>
+            </div>
+        </article>
 
-            // 2. Acionar o Interstitial
-            triggerArticle: function(id) {
-                this.targetId = id;
-                this.modal.style.display = 'flex';
-                
-                let seconds = 5;
-                this.btnSkip.disabled = true;
-                this.btnSkip.classList.remove('active');
-                this.btnSkip.innerText = `A preparar conteúdo... (${seconds})`;
-                
-                const timer = setInterval(() => {
-                    seconds--;
-                    this.btnSkip.innerText = `A preparar conteúdo... (${seconds})`;
-                    
-                    if (seconds <= 0) {
-                        clearInterval(timer);
-                        document.getElementById('loader').style.display = 'none';
-                        this.btnSkip.innerText = "Aceder ao Artigo";
-                        this.btnSkip.classList.add('active');
-                        this.btnSkip.disabled = false;
-                    }
-                }, 1000);
-            },
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1000&auto=format&fit=crop" alt="Sustentabilidade" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Meio Ambiente</span>
+                <h2>Economia Circular: O Fim do Desperdício e o Futuro da Indústria</h2>
+                <div class="content-text">
+                    <p>O modelo linear de produção — extrair, produzir, consumir e descartar — atingiu seu limite. Os recursos naturais são finitos e a quantidade de lixo gerada é insustentável. Surge então a Economia Circular, um paradigma que busca dissociar o crescimento econômico do consumo de recursos finitos, desenhando produtos que possam ser reutilizados, reparados e reciclados indefinidamente.</p>
+                    <p>Grandes empresas já estão adotando esse modelo não apenas por consciência ambiental, mas por eficiência econômica. Transformar resíduos em matéria-prima reduz custos e protege as companhias da volatilidade dos preços das commodities. O conceito de "produto como serviço" (como alugar uma lâmpada em vez de comprá-la, onde o fabricante é responsável pela manutenção e reciclagem) está ganhando força.</p>
+                    <p>Para o consumidor, isso significa produtos mais duráveis e reparáveis. A luta contra a obsolescência programada é uma parte vital desse movimento. Governos ao redor do mundo, especialmente na Europa, estão criando legislações que exigem o "direito ao reparo", forçando fabricantes a disponibilizarem peças e manuais para que eletrônicos não virem lixo prematuramente.</p>
+                    <p>A transição para a economia circular é complexa e exige inovação em design e logística reversa. No entanto, é o único caminho viável para garantir que as futuras gerações tenham acesso aos recursos necessários para viver, mantendo o planeta habitável e a economia próspera.</p>
+                </div>
+            </div>
+        </article>
 
-            // 3. Pular Ad e Mostrar Conteúdo
-            skipAd: function() {
-                this.modal.style.display = 'none';
-                document.getElementById('loader').style.display = 'inline-block';
-                this.renderArticle(this.targetId);
-            },
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format&fit=crop" alt="Programação" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Desenvolvimento</span>
+                <h2>Python ou JavaScript? Qual Linguagem Aprender Primeiro em 2025</h2>
+                <div class="content-text">
+                    <p>Para quem está entrando no mundo da tecnologia, a dúvida clássica permanece: por onde começar? Python e JavaScript dominam o mercado, mas servem a propósitos diferentes. A escolha da sua primeira linguagem de programação pode definir a trajetória da sua carreira nos primeiros anos, influenciando o tipo de projetos em que você trabalhará e as oportunidades de emprego disponíveis.</p>
+                    <p>Python é frequentemente recomendado para iniciantes devido à sua sintaxe limpa e legível, que se assemelha ao inglês. É a linguagem rainha da Ciência de Dados, Inteligência Artificial e Automação. Se o seu objetivo é trabalhar com Machine Learning, análise de dados ou scripts de back-end robustos, Python é a escolha indiscutível. Sua comunidade é acolhedora e a quantidade de bibliotecas disponíveis acelera muito o desenvolvimento.</p>
+                    <p>Por outro lado, JavaScript é a linguagem da Web. É impossível se tornar um desenvolvedor Front-end sem dominá-la. Com o advento do Node.js, o JavaScript também conquistou o Back-end, permitindo que você se torne um desenvolvedor Full Stack dominando apenas uma linguagem. Se você quer ver resultados visuais rápidos, criar sites interativos e aplicativos móveis (com React Native), o JavaScript é o caminho.</p>
+                    <p>A verdade é que um bom programador acabará aprendendo as duas. A lógica de programação é transferível. O importante é escolher uma, focar nos fundamentos — variáveis, loops, funções, estruturas de dados — e construir projetos reais. A melhor linguagem é aquela que permite que você resolva problemas e crie valor.</p>
+                </div>
+            </div>
+        </article>
 
-            // 4. Renderizar o Artigo com Injeção de Ads
-            renderArticle: function(id) {
-                window.scrollTo(0,0);
-                const art = articles.find(a => a.id === id);
-                
-                let contentHTML = '';
-                art.content.forEach((paragraph, index) => {
-                    if (paragraph.startsWith('##')) {
-                        contentHTML += `<h2>${paragraph.replace('## ', '')}</h2>`;
-                    } else {
-                        if(index === 0) contentHTML += `<p class="dropcap">${paragraph}</p>`;
-                        else contentHTML += `<p>${paragraph}</p>`;
-                    }
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1000&auto=format&fit=crop" alt="Bitcoin e Cripto" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Finanças</span>
+                <h2>Bitcoin e Blockchain: Entendendo a Tecnologia por Trás do Dinheiro Digital</h2>
+                <div class="content-text">
+                    <p>O Bitcoin surgiu em 2008 como uma resposta à crise financeira global, propondo um sistema de dinheiro eletrônico peer-to-peer (ponto a ponto) sem a necessidade de intermediários como bancos ou governos. Mas a verdadeira revolução não é apenas a moeda, e sim a tecnologia que a sustenta: a Blockchain. Entender como ela funciona é essencial para compreender o futuro das transações financeiras e dos contratos inteligentes.</p>
+                    <p>A Blockchain é, essencialmente, um livro-razão público e imutável. Cada transação é registrada em um bloco, que é conectado ao anterior através de criptografia complexa. Isso torna o sistema extremamente seguro; para hackear a rede, seria necessário um poder computacional superior ao de todos os outros participantes combinados. Essa descentralização traz transparência e segurança inéditas para o sistema financeiro.</p>
+                    <p>Além do Bitcoin, surgiram milhares de outras criptomoedas e tokens, como o Ethereum, que introduziu os "Smart Contracts" — contratos programáveis que se executam automaticamente quando certas condições são atendidas. Isso abre portas para as Finanças Descentralizadas (DeFi), onde empréstimos, seguros e trocas ocorrem sem burocracia institucional.</p>
+                    <p>Apesar da volatilidade dos preços assustar investidores conservadores, a tecnologia veio para ficar. Grandes bancos centrais já estudam criar suas próprias moedas digitais (CBDCs). Estudar este mercado exige cautela e muito conhecimento técnico, mas ignorá-lo é fechar os olhos para uma das maiores inovações econômicas do século.</p>
+                </div>
+            </div>
+        </article>
 
-                    // Injeta anúncio após parágrafos específicos (AQUI ENTRA O ADSENSE AUTOMÁTICO)
-                    if (index === 2 || index === 5 || index === 8) {
-                        contentHTML += `<div class="ad-placeholder">Publicidade Dinâmica (In-Article)</div>`;
-                    }
-                });
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop" alt="Viagens" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Lifestyle</span>
+                <h2>Nômades Digitais: Como Viajar o Mundo Trabalhando Pela Internet</h2>
+                <div class="content-text">
+                    <p>O conceito de trabalho mudou. Não é mais necessário estar preso a um escritório das 9 às 18 horas para ser produtivo e construir uma carreira de sucesso. A ascensão do trabalho remoto criou uma nova classe de profissionais: os nômades digitais. Pessoas que utilizam a tecnologia para trabalhar de qualquer lugar do mundo, trocando a estabilidade de um endereço fixo pela liberdade de conhecer novas culturas constantemente.</p>
+                    <p>Para se tornar um nômade digital, a primeira etapa é ter uma fonte de renda remota e estável. Profissões como programação, design, redação, marketing digital e consultoria são as mais comuns. Além disso, é necessário um planejamento financeiro rigoroso e disciplina. Trabalhar de uma praia na Tailândia parece idílico, mas exige foco para não deixar o lazer atrapalhar as entregas profissionais.</p>
+                    <p>A questão da conectividade é vital. A "ferramenta de trabalho" de um nômade é uma boa conexão Wi-Fi. Países como Portugal, Estônia e Costa Rica já criaram vistos específicos para nômades digitais, reconhecendo o valor econômico que esses profissionais trazem. Eles buscam infraestrutura, segurança e custo de vida acessível.</p>
+                    <p>A vida na estrada ensina minimalismo e adaptabilidade. Você aprende a viver com o que cabe em uma mala e a resolver problemas em idiomas que não domina. É uma jornada de autoconhecimento profundo, onde o mundo se torna, literalmente, o seu quintal e o seu escritório.</p>
+                </div>
+            </div>
+        </article>
+                <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" alt="Segurança" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Tecnologia</span>
+                <h2>Cybersegurança: Protegendo seus Dados em um Mundo Conectado</h2>
+                <div class="content-text">
+                    <p>Com a digitalização de nossas vidas, nossos dados se tornaram o novo petróleo — e também o alvo principal de criminosos. A segurança cibernética não é mais uma preocupação exclusiva de grandes corporações; é uma necessidade doméstica. Desde senhas fracas até redes Wi-Fi públicas desprotegidas, estamos constantemente expostos a riscos que podem resultar em roubo de identidade e perdas financeiras.</p>
+                    <p>A primeira linha de defesa é a autenticação de dois fatores (2FA). Ativá-la em todas as suas contas (e-mail, redes sociais, bancos) cria uma barreira extra que impede o acesso mesmo que sua senha seja vazada. Além disso, o uso de gerenciadores de senhas elimina a prática perigosa de usar a mesma senha para tudo, gerando códigos complexos e únicos para cada serviço.</p>
+                    <p>O phishing continua sendo a técnica mais eficaz dos hackers. E-mails e mensagens falsas que induzem o usuário a clicar em links maliciosos estão cada vez mais sofisticados. A educação digital é fundamental: desconfie de promessas urgentes, verifique o remetente e nunca forneça dados sensíveis sem confirmar a fonte.</p>
+                    <p>Manter sistemas operacionais e antivírus atualizados fecha as brechas de segurança conhecidas. A cibersegurança é uma corrida contínua entre defesa e ataque. Adotar uma postura proativa e paranoica (no bom sentido) é o melhor caminho para navegar na web com tranquilidade.</p>
+                </div>
+            </div>
+        </article>
 
-                this.main.innerHTML = `
-                    <div class="article-container">
-                        <button onclick="app.goHome()" style="background:none; border:none; color:#64748b; cursor:pointer; margin-bottom:20px;">← Voltar para Home</button>
-                        <div class="article-header">
-                            <span class="category-tag">${art.category}</span>
-                            <h1>${art.title}</h1>
-                            <div class="article-meta">Escrito por <strong>Editor Chefe</strong> • ${art.readTime}</div>
-                        </div>
-                        <img src="${art.image}" style="width:100%; height:400px; object-fit:cover; border-radius:8px; margin-bottom:40px;" alt="Capa">
-                        
-                        <div class="article-content">
-                            ${contentHTML}
-                        </div>
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1484154218962-a1c00207099b?q=80&w=1000&auto=format&fit=crop" alt="Decoração" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Casa</span>
+                <h2>Minimalismo no Lar: Como Criar Ambientes Funcionais e Acolhedores</h2>
+                <div class="content-text">
+                    <p>O minimalismo na decoração vai muito além de paredes brancas e poucos móveis. É uma filosofia de vida que prega a intencionalidade: ter em casa apenas o que é útil ou o que traz alegria. Em um mundo cheio de excessos visuais e consumismo, transformar o lar em um refúgio de paz e organização tornou-se essencial para o bem-estar mental.</p>
+                    <p>Começar pelo destralhe é libertador. Doar roupas que não servem, vender utensílios duplicados e jogar fora a papelada velha abre espaço não só físico, mas mental. Um ambiente limpo visualmente reduz a carga cognitiva, permitindo que o cérebro relaxe. A regra "menos é mais" aplica-se na escolha de móveis de qualidade e design atemporal, em vez de encher a casa de itens baratos e descartáveis.</p>
+                    <p>A funcionalidade deve guiar a estética. Cada objeto deve ter seu lugar definido ("um lugar para cada coisa, cada coisa em seu lugar"). O uso de plantas, texturas naturais como madeira e linho, e uma boa iluminação trazem o aconchego necessário para que o ambiente não pareça frio ou hospitalar.</p>
+                    <p>Adotar o minimalismo também é uma atitude sustentável e econômica. Você passa a comprar menos e melhor, valorizando a durabilidade. Sua casa torna-se um reflexo de quem você é, livre de bagunça e focada no que realmente importa: as pessoas e as experiências vividas ali.</p>
+                </div>
+            </div>
+        </article>
 
-                        <div class="ad-placeholder" style="height:250px; margin-top:50px; border-color:var(--gold);">
-                            Anúncio Final (Matched Content)
-                        </div>
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1000&auto=format&fit=crop" alt="Idiomas" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Educação</span>
+                <h2>A Importância do Inglês no Mercado de Trabalho Globalizado</h2>
+                <div class="content-text">
+                    <p>O inglês deixou de ser um diferencial no currículo para se tornar um pré-requisito básico em muitas áreas. Em um mundo globalizado e interconectado pela internet, o inglês é a língua franca dos negócios, da tecnologia e da ciência. Não dominá-lo limita drasticamente o acesso a informações atualizadas e a oportunidades de carreira em multinacionais ou projetos remotos internacionais.</p>
+                    <p>A fluência permite consumir conteúdo direto da fonte. A maioria dos tutoriais de programação, relatórios financeiros globais e pesquisas acadêmicas são publicados primeiramente em inglês. Esperar pela tradução coloca o profissional em desvantagem competitiva, sempre um passo atrás das tendências mundiais.</p>
+                    <p>Aprender um novo idioma também desenvolve habilidades cognitivas, melhora a memória e a capacidade de multitarefa. Hoje, com aplicativos, aulas online e intercâmbios virtuais, o acesso ao aprendizado democratizou-se. A consistência é mais importante que a intensidade; estudar 20 minutos todos os dias é mais eficaz do que estudar 5 horas apenas no sábado.</p>
+                    <p>Investir no inglês é investir no seu "valor de mercado". Profissionais bilíngues chegam a ganhar até 60% mais do que seus pares que falam apenas o idioma nativo. É uma ferramenta de alavancagem de carreira que abre portas para o mundo inteiro, sem sair de casa.</p>
+                </div>
+            </div>
+        </article>
 
-                        <div style="background:#f8fafc; padding:30px; border-radius:8px; margin-top:40px; text-align:center;">
-                            <h3>Gostou deste conteúdo?</h3>
-                            <p style="margin:10px 0;">Compartilhe para desbloquear mais estratégias.</p>
-                            <button class="nav-btn" style="background:var(--primary); color:white;" onclick="app.goHome()">Ler Próxima História</button>
-                        </div>
-                    </div>
-                `;
-            },
-        };
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1000&auto=format&fit=crop" alt="Culinária" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Alimentação</span>
+                <h2>Alimentação Consciente: Nutrição e Sabor para uma Vida Longa</h2>
+                <div class="content-text">
+                    <p>A alimentação consciente (Mindful Eating) propõe uma reconexão com o ato de comer. Em vez de engolir a comida rapidamente enquanto olhamos o celular, somos convidados a prestar atenção nas cores, texturas, aromas e sabores do prato. Isso não apenas melhora a digestão, mas também nos ajuda a identificar os sinais reais de fome e saciedade, combatendo a obesidade e a compulsão alimentar.</p>
+                    <p>A base de uma dieta saudável continua sendo "descascar mais e desembalar menos". Alimentos ultraprocessados, cheios de conservantes, açúcares e sódio, são os vilões da saúde moderna, associados a doenças cardíacas e diabetes. Privilegiar vegetais, frutas, grãos integrais e proteínas magras fornece o combustível de qualidade que nosso corpo precisa para funcionar bem.</p>
+                    <p>Cozinhar a própria comida é um ato revolucionário de autocuidado. Permite controlar a qualidade dos ingredientes e cria uma relação de afeto com o alimento. Planejar as refeições da semana (meal prep) é uma estratégia excelente para evitar cair na tentação do fast-food nos dias corridos.</p>
+                    <p>A nutrição não precisa ser restritiva ou sem graça. O equilíbrio é a chave. Comer um doce ou uma pizza ocasionalmente faz parte de uma vida social saudável. O objetivo é a constância nos bons hábitos, transformando a alimentação em uma aliada da longevidade e da vitalidade.</p>
+                </div>
+            </div>
+        </article>
 
-        // Scroll listener para barra de progresso
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-        };
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000&auto=format&fit=crop" alt="Produtividade" class="article-image">
+            <div class="article-content">
+                <span class="category-tag">Produtividade</span>
+                <h2>Gestão de Tempo: Técnicas para Produzir Mais Trabalhando Menos</h2>
+                <div class="content-text">
+                    <p>Estar ocupado não é sinônimo de ser produtivo. Muitas vezes, passamos o dia apagando incêndios e respondendo e-mails, mas chegamos ao final do dia com a sensação de que não realizamos nada importante. A gestão de tempo eficaz foca em priorização e energia, não apenas em preencher a agenda. Técnicas como o Pomodoro e a Matriz de Eisenhower podem salvar sua rotina.</p>
+                    <p>A Técnica Pomodoro consiste em focar totalmente em uma tarefa por 25 minutos e descansar 5. Esses intervalos frequentes mantêm a mente fresca e evitam a fadiga mental. Já a Matriz de Eisenhower ajuda a separar o que é Urgente do que é Importante, garantindo que você dedique tempo aos projetos de longo prazo que realmente trazem resultados, em vez de apenas reagir às demandas dos outros.</p>
+                    <p>Eliminar as distrações é crucial. Notificações de celular são as maiores inimigas do "Deep Work" (Trabalho Profundo). Estabelecer blocos de tempo específicos para checar mensagens permite que você entre em estado de fluxo nas tarefas complexas. Aprender a dizer "não" também é uma habilidade de gestão de tempo.</p>
+                    <p>Por fim, o descanso é parte da produtividade. Ninguém consegue manter alta performance sem sono de qualidade e lazer. Trabalhar de forma inteligente significa respeitar os limites do corpo e da mente, garantindo consistência a longo prazo em vez de picos de trabalho seguidos de burnout.</p>
+                </div>
+            </div>
+        </article>
 
-        app.goHome();
+    </main>
 
-    </script>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" onclick="alert('Página de Política de Privacidade: Respeitamos seus dados conforme a LGPD e GDPR. Utilizamos cookies para melhorar a experiência.')">Política de Privacidade</a>
+                <a href="#" onclick="alert('Termos de Uso: Todo o conteúdo é informativo. Não nos responsabilizamos por decisões financeiras baseadas nos textos.')">Termos de Uso</a>
+                <a href="#" onclick="alert('Sobre Nós: Somos um portal dedicado a trazer conhecimento de qualidade em diversas áreas.')">Sobre Nós</a>
+                <a href="#" onclick="alert('Contato: envie um email para contato@bloguniversal.com')">Contato</a>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #9ca3af;">&copy; 2025 Blog Universal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
-</html>
+    </html>
+    
