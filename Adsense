@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente Milionária - Dicas de Finanças e Renda Extra</title>
+    <meta name="description" content="Aprenda como ganhar dinheiro na internet, investir e economizar com nossas dicas exclusivas.">
+
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #f4f6f7;
+            --text: #333;
+            --white: #fff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: #eef2f5; color: var(--text); line-height: 1.6; }
+
+        /* Header */
+        header { background: var(--white); box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .menu a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 500; }
+        .menu a:hover { color: var(--primary); }
+
+        /* Layout Principal */
+        .container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; padding: 0 1rem; }
+
+        /* Espaços de Anúncio (Ad Units) */
+        .ad-unit {
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border: 1px dashed #999;
+        }
+        .ad-top { width: 100%; height: 90px; margin-top: 1rem; display: none; /* Ativar quando tiver ads */ }
+        .ad-sidebar { width: 100%; height: 250px; }
+        .ad-content { width: 100%; height: 250px; margin: 2rem 0; }
+
+        /* Artigos */
+        .post-card { background: var(--white); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .post-card:hover { transform: translateY(-3px); }
+        .post-img { width: 100%; height: 200px; background-color: #bdc3c7; object-fit: cover; }
+        .post-content { padding: 1.5rem; }
+        .cat-tag { background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; }
+        .post-title { margin: 10px 0; font-size: 1.4rem; }
+        .post-excerpt { color: #666; margin-bottom: 1rem; }
+        .read-more { color: var(--primary); text-decoration: none; font-weight: bold; }
+
+        /* Sidebar */
+        .sidebar-widget { background: var(--white); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+        .widget-title { border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 15px; font-size: 1.1rem; }
+        .category-list li { list-style: none; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .category-list a { text-decoration: none; color: var(--text); }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 3rem 0; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 0 1rem; }
+        .footer-links a { color: #ccc; text-decoration: none; display: block; margin-bottom: 5px; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .menu { display: none; } /* Adicionar JS para menu hambúrguer */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Mente<span>Milionária</span></a>
+            <nav class="menu">
+                <a href="#">Início</a>
+                <a href="#">Renda Extra</a>
+                <a href="#">Investimentos</a>
+                <a href="#">Marketing Digital</a>
+                <a href="#">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <div style="max-width: 1200px; margin: 10px auto; padding: 0 1rem;">
+        <div class="ad-unit ad-top" style="display:flex;">
+            Anúncio Google AdSense (Topo)
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <article class="post-card">
+                <div class="post-img" style="background: #27ae60;"></div> <div class="post-content">
+                    <span class="cat-tag">Marketing Digital</span>
+                    <h2 class="post-title"><a href="#" style="text-decoration:none; color:inherit;">5 Formas Comprovadas de Ganhar Dinheiro com IA em 2025</a></h2>
+                    <p class="post-excerpt">A inteligência artificial está mudando o mercado. Descubra como utilizar ferramentas como ChatGPT e Gemini para criar fontes de renda passiva.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo →</a>
+                </div>
+            </article>
+
+            <div class="ad-unit ad-content">
+                Anúncio Google AdSense (In-Feed)
+            </div>
+
+            <article class="post-card">
+                <div class="post-img" style="background: #2980b9;"></div>
+                <div class="post-content">
+                    <span class="cat-tag">Investimentos</span>
+                    <h2 class="post-title"><a href="#" style="text-decoration:none; color:inherit;">O Guia do Iniciante para Dividendos</a></h2>
+                    <p class="post-excerpt">Como montar uma carteira de ações que paga aluguel todos os meses sem precisar trabalhar mais por isso.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo →</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-img" style="background: #8e44ad;"></div>
+                <div class="post-content">
+                    <span class="cat-tag">Freelancer</span>
+                    <h2 class="post-title"><a href="#" style="text-decoration:none; color:inherit;">Sites para Ganhar em Dólar Trabalhando de Casa</a></h2>
+                    <p class="post-excerpt">Lista atualizada com as melhores plataformas para freelancers brasileiros receberem em moeda forte.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo →</a>
+                </div>
+            </article>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Sobre o Blog</h3>
+                <p>Ajudamos você a desbloquear seu potencial financeiro com dicas práticas e estratégias digitais.</p>
+            </div>
+
+            <div class="ad-unit ad-sidebar">
+                Anúncio Sidebar (300x250)
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Categorias</h3>
+                <ul class="category-list">
+                    <li><a href="#">Renda Passiva</a></li>
+                    <li><a href="#">Marketing de Afiliados</a></li>
+                    <li><a href="#">Criptomoedas</a></li>
+                    <li><a href="#">Dropshipping</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget" style="background: var(--primary); color: white;">
+                <h3 class="widget-title" style="border-color: white;">Receba Dicas VIP</h3>
+                <input type="email" placeholder="Seu melhor e-mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px;">
+                <button style="width: 100%; padding: 10px; background: var(--dark); color: white; border: none; cursor: pointer; border-radius: 4px;">Inscrever-se</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Mente Milionária</h3>
+                <p>Seu guia definitivo para a liberdade financeira.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Úteis</h3>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Contato</a>
+                <a href="#">Quem Somos</a>
+            </div>
+            <div>
+                <h3>Redes Sociais</h3>
+                <p>Instagram | YouTube | Twitter</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 2rem; opacity: 0.7;">
+            &copy; 2025 Mente Milionária. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
